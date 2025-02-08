@@ -1,4 +1,4 @@
-package com.example.bitrix.ui.theme
+package com.bitrix.orders.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

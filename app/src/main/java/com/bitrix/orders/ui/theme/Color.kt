@@ -1,4 +1,4 @@
-package com.example.bitrix.ui.theme
+package com.bitrix.orders.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,4 +1,4 @@
-package com.example.bitrix
+package com.bitrix.orders
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.bitrix.ui.theme.Orders2Theme
+import com.bitrix.orders.ui.theme.Orders2Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hell $name!",
+        text = "Заказы из $name!",
         modifier = modifier
     )
 }
