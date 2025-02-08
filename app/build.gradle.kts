@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.bitrix" // Используйте = вместо пробела
+    namespace = "com.bitrix.orders" // Используйте = вместо пробела
     compileSdk = 34 // Только число без "Version"
 
     defaultConfig {
-        applicationId = "com.example.bitrix"
+        applicationId = "com.bitrix.orders"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
@@ -84,8 +84,12 @@ dependencies {
 
     // WorkManager
     implementation("androidx.work:work-runtime-ktx:2.9.0")
+    implementation(libs.androidx.monitor)
+    implementation(libs.androidx.junit.ktx)
 
     // Debug-зависимости
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    implementation("androidx.appcompat:appcompat:1.6.1")
 }
