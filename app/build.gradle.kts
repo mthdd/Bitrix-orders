@@ -78,8 +78,9 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.50")
-    implementation("com.google.dagger:hilt-android-compiler:2.50")
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
 
     // WorkManager
     implementation("androidx.work:work-runtime-ktx:2.9.0")

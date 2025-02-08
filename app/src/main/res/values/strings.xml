@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Orders2</string>
+    <string name="error_message">Ошибка</string>
 </resources>
