@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import com.bitrix.orders.network.BitrixApiService
 
 @HiltViewModel
 class OrderDetailViewModel @Inject constructor(
@@ -23,7 +24,8 @@ class OrderDetailViewModel @Inject constructor(
                 val order = repository.getOrderDetails(orderId)
                 _orderState.value = order
             } catch (e: Exception) {
-                // Обработка ошибок
+                // Добавьте обработку ошибок
+                _orderState.value = null
             }
         }
     }
