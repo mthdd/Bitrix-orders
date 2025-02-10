@@ -3,7 +3,7 @@ package com.bitrix.orders.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bitrix.orders.data.OrderRepository
-import com.bitrix.orders.model.Order
+import com.bitrix.orders.model.BitrixOrder
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -31,7 +31,7 @@ class OrderViewModel @Inject constructor(
 }
 
 data class OrdersState(
-    val orders: List<Order> = emptyList(), // Должно быть List<Order>
+    val orders: List<BitrixOrder> = emptyList(), // Измените BitrixOrder на Order
     val isLoading: Boolean = false,
     val error: String? = null
 )

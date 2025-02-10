@@ -4,11 +4,11 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.bitrix.orders.model.Order
+import com.bitrix.orders.model.BitrixOrder
 
 @Composable
 fun OrderListItem(
-    order: Order,
+    order: BitrixOrder,
     onItemClick: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {

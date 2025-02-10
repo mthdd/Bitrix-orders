@@ -21,10 +21,9 @@ class OrderDetailViewModel @Inject constructor(
     fun loadOrderDetails(orderId: String) {
         viewModelScope.launch {
             try {
-                val order = repository.getOrderDetails(orderId)
+                val order = repository.getOrderDetails(orderId).toDomain() // Добавьте toDomain()
                 _orderState.value = order
             } catch (e: Exception) {
-                // Добавьте обработку ошибок
                 _orderState.value = null
             }
         }

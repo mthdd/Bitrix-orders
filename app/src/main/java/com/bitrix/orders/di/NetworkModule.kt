@@ -16,7 +16,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    private const val BASE_URL = "https://here.menu/rest/1/5kprz6wbqq6zhkxe/"
+    private const val BASE_URL = "https://here.menu/rest/"
 
     @Provides
     @Singleton
@@ -25,5 +25,11 @@ object NetworkModule {
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideBitrixApiService(retrofit: Retrofit): BitrixApiService {
+        return retrofit.create(BitrixApiService::class.java)
     }
 }
