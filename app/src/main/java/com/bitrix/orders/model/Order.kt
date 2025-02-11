@@ -1,18 +1,18 @@
+// com/bitrix/orders/model/Order.kt:
 package com.bitrix.orders.model
 
-// Основная модель заказа
 data class Order(
     val id: String,
-    val title: String,         // Добавлено
-    val dateCreated: String,   // Переименовано с date
+    val title: String,
+    val dateCreated: String,
     val totalPrice: Double,
-    val currency: String,      // Добавлено
+    val currency: String,
     val status: String
 ){
     fun toDomain(): Order {
         return Order(
             id = id,
-            title = "Заказ #$id",         // Генерируем title
+            title = "Заказ #$id",
             dateCreated = dateCreated,
             totalPrice = totalPrice,
             currency = currency,

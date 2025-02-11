@@ -1,8 +1,12 @@
+// com/bitrix/orders/model/BitrixOrderDetailResponse.kt:
 package com.bitrix.orders.model
 
 import com.google.gson.annotations.SerializedName
-import com.bitrix.orders.model.BitrixOrderDetail
 
 data class BitrixOrderDetailResponse(
-    @SerializedName("result") val order: BitrixOrderDetail
+    @SerializedName("result") val result: BitrixOrderDetailResult
+)
+
+data class BitrixOrderDetailResult(
+    @SerializedName("order") val order: BitrixOrderDetail
 )

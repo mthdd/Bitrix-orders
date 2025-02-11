@@ -1,3 +1,4 @@
+// com/bitrix/orders/MainActivity.kt:
 package com.bitrix.orders
 
 import android.os.Bundle

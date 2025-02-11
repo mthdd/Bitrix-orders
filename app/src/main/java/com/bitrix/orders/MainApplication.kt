@@ -1,3 +1,4 @@
+// com/bitrix/orders/MainApplication.kt:
 package com.bitrix.orders
 
 import android.app.Application

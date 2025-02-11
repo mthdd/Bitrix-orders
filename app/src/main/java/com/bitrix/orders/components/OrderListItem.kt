@@ -1,14 +1,15 @@
+// com/bitrix/orders/components/OrderListItem.kt:
 package com.bitrix.orders.components
 
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.bitrix.orders.model.BitrixOrder
+import com.bitrix.orders.model.Order
 
 @Composable
 fun OrderListItem(
-    order: BitrixOrder,
+    order: Order,
     onItemClick: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {

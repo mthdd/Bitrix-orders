@@ -1,3 +1,4 @@
+// com/bitrix/orders/screens/OrderDetailScreen.kt:
 package com.bitrix.orders.screens
 
 import androidx.compose.material3.Text
@@ -12,10 +13,7 @@ import androidx.compose.material3.Surface
 
 
 @Composable
-fun OrderDetailScreen(
-    orderId: String,
-    modifier: Modifier = Modifier
-) {
+fun OrderDetailScreen(orderId: String) {
     val viewModel: OrderDetailViewModel = hiltViewModel()
     val state = viewModel.orderState.collectAsState().value
 
@@ -23,13 +21,15 @@ fun OrderDetailScreen(
         viewModel.loadOrderDetails(orderId)
     }
 
-    Surface(modifier = modifier) { // Добавлен контейнер
+    Surface {
         when {
             state == null -> Text("Loading...")
             else -> {
                 Column {
                     Text("Order ID: ${state.id}")
-                    Text("Total: ${state.totalPrice}")
+                    Text("Date: ${state.dateCreated}")
+                    Text("Total: ${state.totalPrice} ${state.currency}")
+                    Text("Status: ${state.status}")
                 }
             }
         }
