@@ -3,6 +3,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".MainApplication"
+        android:label="Заказы"
         android:networkSecurityConfig="@xml/network_security_config">
 
     <activity

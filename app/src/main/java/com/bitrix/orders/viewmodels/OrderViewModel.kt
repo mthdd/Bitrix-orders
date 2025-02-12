@@ -36,7 +36,7 @@ class OrderViewModel @Inject constructor(
 }
 
 data class OrdersState(
-    val orders: List<Order> = emptyList(), // Измените BitrixOrder на Order
+    val orders: List<Order> = emptyList(),
     val isLoading: Boolean = false,
     val error: String? = null
 )

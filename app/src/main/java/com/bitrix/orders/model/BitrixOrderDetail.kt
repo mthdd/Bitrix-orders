@@ -2,7 +2,8 @@
 package com.bitrix.orders.model
 
 import com.google.gson.annotations.SerializedName
-// import com.bitrix.orders.model.Order
+import java.time.LocalDateTime
+
 
 data class BitrixOrderDetail(
     @SerializedName("id") val id: String,
@@ -14,9 +15,9 @@ data class BitrixOrderDetail(
     fun toDomain(): Order = Order(
         id = id,
         title = "Заказ #$id",
-        dateCreated = date,
+        dateCreated = LocalDateTime.parse(date, formatter),
         totalPrice = totalPrice,
         currency = currency,
-        status = status
+        statusCode = status
     )
 }

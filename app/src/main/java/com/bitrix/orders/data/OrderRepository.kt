@@ -1,7 +1,7 @@
 // com/bitrix/orders/data/OrderRepository.kt
 package com.bitrix.orders.data
 
-import com.bitrix.orders.model.BitrixOrder
+
 import com.bitrix.orders.model.BitrixOrderDetail
 import com.bitrix.orders.model.Order
 import com.bitrix.orders.network.BitrixApiService
@@ -16,7 +16,10 @@ class OrderRepository @Inject constructor(
             webhookKey = "90fr03z5z99ecggz"
         )
         return if (response.isSuccessful) {
-            response.body()?.result?.orders?.map { it.toDomain() } ?: emptyList()
+            response.body()?.result?.orders
+                ?.map { it.toDomain() }
+                ?.sortedByDescending { it.dateCreated }
+                ?: emptyList()
         } else {
             emptyList()
         }

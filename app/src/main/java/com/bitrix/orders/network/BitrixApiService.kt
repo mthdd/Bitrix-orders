@@ -5,6 +5,7 @@ import com.bitrix.orders.model.BitrixOrderDetailResponse
 import com.bitrix.orders.model.BitrixOrderListResponse
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
 
@@ -20,5 +21,13 @@ interface BitrixApiService {
         @Path("webhook_id") webhookId: String,
         @Path("webhook_key") webhookKey: String,
         @Query("id") orderId: String
+    ): Response<BitrixOrderDetailResponse>
+
+    @POST("rest/{webhook_id}/{webhook_key}/sale.order.update")
+    suspend fun updateOrderStatus(
+        @Path("webhook_id") webhookId: String,
+        @Path("webhook_key") webhookKey: String,
+        @Query("id") orderId: String,
+        @Query("fields[STATUS_ID]") statusCode: String
     ): Response<BitrixOrderDetailResponse>
 }
